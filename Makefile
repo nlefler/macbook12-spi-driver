@@ -4,7 +4,10 @@ KVERSION := $(KERNELRELEASE)
 ifeq ($(origin KERNELRELEASE), undefined)
 KVERSION := $(shell uname -r)
 endif
+KDIR := $(KERNEL_DIR)
+ifeq ($(origin KERNEL_DIR), undefined)
 KDIR := /lib/modules/$(KVERSION)/build
+endif
 PWD := $(shell pwd)
 
 all:
